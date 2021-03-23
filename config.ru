@@ -1,3 +1,3 @@
 require "./config/environment"
-use UsersController
 run ApplicationController
+use UsersController

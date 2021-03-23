@@ -1,18 +1,28 @@
 class UsersController < ApplicationController
     #here ill have the signup,Log in,sign out
-       get '/signup' do
+
+       get '/registrations/signup' do
            erb :'registrations/signup'
        end
        
-       post '/signup' do
+       post '/registraion/signup' do
         @user = User.new(username: params[:username],email: params[:email], password: params[:password])
            #your code here!
-           @user.save
-               redirect '/login'
+           if user.save
+            session["user_id"] = user.id
+            redirect "/login"
+        else
+            redirect "/sessions/signup"
+        end
+
        end
 
-       get '/login' do
+       get '/sessions/login' do
            erb :'sessions/login'
+       end
+
+       post '/sessions/login' do
+        erb 'users/home'
        end
 
        
