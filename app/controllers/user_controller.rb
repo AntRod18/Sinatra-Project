@@ -1,3 +1,5 @@
+require 'pry'
+
 class UsersController < ApplicationController
     #here ill have the signup,Log in,sign out
 
@@ -5,17 +7,16 @@ class UsersController < ApplicationController
            erb :'registrations/signup'
        end
        
-       post '/registraion/signup' do
-        @user = User.new(username: params[:username],email: params[:email], password: params[:password])
-           #your code here!
-           if user.save
+       post 'registrations/signup' do
+		@user = User.new(:username => params[:username], :password => params[:password])
+        binding.pry
+		if @user.save
             session["user_id"] = user.id
-            redirect "/login"
-        else
-            redirect "/sessions/signup"
-        end
-
-       end
+			redirect '/sessions/login'
+		else
+			redirect '/registrations/signup'
+		end
+	end
 
        get '/sessions/login' do
            erb :'sessions/login'
