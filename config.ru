@@ -1,4 +1,5 @@
 require "./config/environment"
-run ApplicationController
+use Rack::MethodOverride
 use UsersController
 use PostController
+run ApplicationController
