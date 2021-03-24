@@ -1,0 +1,11 @@
+<h3>Posts</h3>
+
+<ul>
+    <% @posts.each do |c| %>
+        <li>
+            <a href="/posts/<%= c.id %>">
+                <%= c.post %>
+            </a>
+        </li>
+    <% end %>
+</ul>
