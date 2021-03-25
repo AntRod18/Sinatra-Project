@@ -13,8 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_03_24_164737) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "post"
+    t.string "content"
     t.integer "user_id"
+    t.string "gamer_tag"
+    t.string "game"
+    t.string "platform"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

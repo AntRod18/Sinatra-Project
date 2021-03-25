@@ -2,6 +2,9 @@
 
 <form action="/posts/<%= @post.id %>" method="POST">
     <input type="hidden" name="_method" value="patch">
-    <input type="text" name="post[post]" value="<%= @post.post %>"><br>
+    <input type="text" name="post[content]" value="<%= @post.content %>"><br>
+    <input type="text" name="post[gamer_tag]" value="<%= @post.gamer_tag %>"><br>
+    <input type="text" name="post[game]" value="<%= @post.game %>"><br>
+    <input type="text" name="post[platform]" value="<%= @post.platform %>"><br>
     <input type="submit" value="Update Post">
 </form>

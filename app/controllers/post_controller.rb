@@ -6,12 +6,12 @@ class PostController < ApplicationController
         erb :'/posts/index'
     end
 
-    get '/new' do
+    get '/posts/new' do
         erb :'/posts/new'
     end
 
-    post '/new' do 
-        post = current_user.posts.build(:post => params['post'])
+    post '/posts' do 
+        post = current_user.posts.build(params['post'])
         post.save
             redirect "/posts/#{post.id}"
     end
@@ -41,13 +41,6 @@ class PostController < ApplicationController
         end
     end
 
-    def redirect_if_not_authorized
-        @post = Post.find_by_id(params[:id])
-        if @post.user_id != session["user_id"]
-            redirect "/posts"
-        end
-    end
-
     delete "/posts/:id" do
         redirect_if_not_logged_in
         redirect_if_not_authorized
@@ -55,6 +48,14 @@ class PostController < ApplicationController
         @post.destroy
 
         redirect "/posts"
+    end
+
+    private
+    def redirect_if_not_authorized
+        @post = Post.find_by_id(params[:id])
+        if @post.user_id != session["user_id"]
+            redirect "/posts"
+        end
     end
 
 end
