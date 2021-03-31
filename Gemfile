@@ -10,6 +10,4 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem "tux"
-
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "dotenv", "~> 2.7"

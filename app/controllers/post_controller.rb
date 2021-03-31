@@ -6,6 +6,12 @@ class PostController < ApplicationController
         erb :'/posts/index'
     end
 
+    get '/posts/feed' do 
+        redirect_if_not_logged_in
+        @feed = Post.all
+        erb :'/posts/feed'
+    end
+
     get '/posts/new' do
         erb :'/posts/new'
     end

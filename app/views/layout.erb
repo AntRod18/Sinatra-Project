@@ -26,10 +26,13 @@
         <a class="nav-link active" aria-current="page" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" aria-current="/posts/new" href="/">Create a Post</a>
+        <a class="nav-link active" aria-current="page" href="/posts/new">Create a Post</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link active" aria-current="/posts" href="/">See Your Posts</a>
+      <a class="nav-link active" aria-current="page" href="/posts">See Your Posts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/posts/feed">See All Posts</a>
     </li>
     <% else %>
       <li class="nav-item">
@@ -45,8 +48,9 @@
   </div>
 </div>
 </nav>
-
+<div class>
 <%= yield %>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,9 @@
+<ul>
+    <% @feed.each do |p| %>
+        <li>
+            <a href="/posts/<%= p.id %>">
+                <%= p.content %>
+            </a>
+        </li>
+    <% end %>
+</ul>

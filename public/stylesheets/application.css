@@ -5,3 +5,7 @@ body {
 .navbar {
     background-color: #3f72af;
 }
+
+.content {
+    padding-top: 50px;
+}
