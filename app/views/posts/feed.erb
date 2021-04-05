@@ -1,9 +1,12 @@
 <ul>
     <% @feed.each do |p| %>
         <li>
-            <a href="/posts/<%= p.id %>">
-                <%= p.content %>
-            </a>
+            <h2>
+                <%= p.content %><br>
+                <%= p.gamer_tag %><br>
+                <%= p.game %><br>
+                <%= p.platform %><br>
+            </h2>
         </li>
     <% end %>
 </ul>
